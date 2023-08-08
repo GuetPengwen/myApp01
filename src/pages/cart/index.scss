@@ -1,0 +1,119 @@
+/*图标外部样式*/
+.icon-box {
+  height: 250px;
+}
+/*左边选中图标样式*/
+.icon {
+  float: left;
+  margin: 88px 20px;
+}
+/*购物车商品图片左浮动*/
+.left-image {
+  float: left;
+}
+/*购物车商品图片样式*/
+.addcart-image {
+  width: 170px;
+  height: 210px;
+  float: left;
+  padding: 10px;
+}
+/*购物车商品信息左浮动*/
+.left-detail {
+  float: left;
+  margin-top: 20px;
+  line-height: 60px;
+}
+/*购物车商品标题样式*/
+.cart-title {
+  margin-top: 24px;
+  font-size: 32px;
+}
+/* 购物车商品价格样式*/
+.cart-price {
+  display: flex;
+  color: #f00;
+  font-size: 20px；;
+}
+/*输入框样式*/
+.input {
+  display: block;
+  width: 65px;
+  height: 70px;
+  line-height: 70px;
+  text-align: center;
+  float: left;
+}
+/*购买商品数量样式*/
+.cart-amount {
+  width: px;
+  background: #f4f4f4;
+  font-size: 30px;
+}
+/*删除图标样式*/
+.right image {
+  width: 70px;
+  height: 70px;
+  float: right;
+  margin-right: 34px;
+  margin-top: 34px;
+}
+/*底部样式*/
+.total-bottom {
+  position: fixed;
+  width: 100%;
+  height: 86px;
+  bottom: 0;
+  background: white;
+}
+/*底部选中图标样式*/
+.cart-icon {
+  margin: 15px 22px;
+  float: left;
+}
+/*全选样式*/
+.checked-all {
+  line-height: 90px;
+  font-size: 36px;
+}
+
+/*合计样式*/
+.cart-total {
+  width: 300px;
+  height: 100%;
+  line-height: 86px;
+  float: right;
+  text-align: center;
+}
+/*清空购物车和结算图标样式*/
+.clear-car {
+  float: right;
+  width: 230px;
+}
+/*清空购物车文字样式*/
+.clear-text {
+  display: block;
+  line-height: 87px;
+  text-align: center;
+  font-size: 36px;
+  color: white;
+  background: #f00;
+}
+/*结算文字样式*/
+.pay {
+  display: block;
+  line-height: 87px;
+  text-align: center;
+  font-size: 36px;
+  color: white;
+  background: #ff8c00;
+}
+/*合计价格样式*/
+.total-color {
+  color: #f00;
+  font-size: 36px;
+}
+/*合计内容样式*/
+.total-text {
+  font-size: 36px;
+}
