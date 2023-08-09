@@ -3,6 +3,8 @@ import {View, Text, Image} from '@tarojs/components'
 import TabBar from '../common/Index'
 import './index.scss'
 import { AtNavBar,AtGrid,AtTabBar, AtDivider} from 'taro-ui'
+import { AtIcon } from 'taro-ui'
+import { AtList, AtListItem } from "taro-ui"
 
 export default class Index extends Component {
   constructor () {
@@ -18,74 +20,44 @@ export default class Index extends Component {
   }
 
   render() {
+    let BASE_URL='http://43.138.164.107/images';
     return (
-      <View>
-        <AtNavBar
-          onClickRgIconSt={this.handleClick}
-          onClickRgIconNd={this.handleClick}
-          onClickLeftIcon={this.handleClick}
-          color='#000'
-          leftText=''
-          rightFirstIconType='bullet-list'
-          rightSecondIconType='user'
-          border='ture'
-        >
-          <View>我的账户</View>
-        </AtNavBar>
-        <Image className='box' src={require('./bg-top.png')}></Image>
+      <View className='me'>
+        <View className='vip'>
+          <AtIcon className='vip-icon' value='sketch' size='35' color='#FFD700'></AtIcon>
+          <View className='v-title1'>会员下单95折</View>
+          <View className='vip-title'>VIP</View>
+          <View className='v-title2'>绑定手机号码</View>
+          <view className="divider"></view>
+          <Image className='myavatar' src={`${BASE_URL}/myavatar.jpg`}></Image>
+          <Image className='yhjuan' src={`${BASE_URL}/yhjuan.jpg`}></Image>
+          <Image className='yuer' src={`${BASE_URL}/yuer.jpg`}></Image>
+          <View className='yhj'>0</View>
+          <View className='yu'>0.00</View>
+          <View className='keyong'>可用劵</View>
+          <View className='yuee'>余额</View>
+        </View>
+
+        <AtList className='mylist'>
+          <AtListItem title='我的订单' arrow='right' />
+          <AtListItem title='我的地址' arrow='right' />
+          <AtListItem title='我的优惠劵' arrow='right' />
+        </AtList>
+
+
         <AtTabBar
+          className='mytab'
           tabList={[
-            { title: '待付款', iconType: 'shopping-cart',text: '2' },
-            { title: '待收货', iconType: 'shopping-bag' },
-            { title: '评价', iconType: 'message', text: '2' },
-            {title:'售后',iconType:'phone'},
-            {title:'我的订单',iconType:'bookmark'}
-          ]}
-          onClick={this.handleClick.bind(this)}
-          current={this.state.current}
-        />
-        <AtDivider content='' fontColor='#ff9900' lineColor='#ff9900' />
-        <AtTabBar
-          tabList={[
-            { title: '京豆',iconType:''},
-            { title: '优惠券',iconType:''},
-            { title: '商品收藏',iconType:''},
-            { title: '店铺关注',iconType:''},
-            { title: '浏览记录',iconType:''}
+            { title: '点餐', iconType: 'shopping-cart'},
+            { title: '订单', iconType: 'shopping-bag'},
+            { title:'联系客服',iconType:'message'}
           ]}
           onClick={this.handleClick.bind(this)}
           current={this.state.current}
         />
 
-        <AtGrid mode='rect' data={
-          [
-            {
-              image: 'https://img12.360buyimg.com/jdphoto/s72x72_jfs/t6160/14/2008729947/2754/7d512a86/595c3aeeNa89ddf71.png',
-              value: '领取中心'
-            },
-            {
-              image: 'https://img20.360buyimg.com/jdphoto/s72x72_jfs/t15151/308/1012305375/2300/536ee6ef/5a411466N040a074b.png',
-              value: '找折扣'
-            },
-            {
-              image: 'https://img10.360buyimg.com/jdphoto/s72x72_jfs/t5872/209/5240187906/2872/8fa98cd/595c3b2aN4155b931.png',
-              value: '领会员'
-            },
-            {
-              image: 'https://img12.360buyimg.com/jdphoto/s72x72_jfs/t10660/330/203667368/1672/801735d7/59c85643N31e68303.png',
-              value: '新品首发'
-            },
-            {
-              image: 'https://img14.360buyimg.com/jdphoto/s72x72_jfs/t17251/336/1311038817/3177/72595a07/5ac44618Na1db7b09.png',
-              value: '领京豆'
-            },
-            {
-              image: 'https://img30.360buyimg.com/jdphoto/s72x72_jfs/t5770/97/5184449507/2423/294d5f95/595c3b4dNbc6bc95d.png',
-              value: '手机馆'
-            }
-          ]
-        } />
-        <TabBar currentTabBar={3}></TabBar>
+
+        <TabBar current={3}></TabBar>
       </View>
     )
   }
