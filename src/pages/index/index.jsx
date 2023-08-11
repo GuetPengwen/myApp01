@@ -16,7 +16,8 @@ export default class Index extends Component {
   componentDidMount() {
     let _this=this;
     Taro.request({
-      url:'https://www.juntaitec.cn/api/productList',
+      url:'https://676f575b25.imdo.co/productList',
+     // url:'https://www.juntaitec.cn/api/productList',
      // url: 'https://www.juntaitec.cn/api/productList', //仅为示例，并非真实的接口地址
       header: {
         'content-type': 'application/json' // 默认值

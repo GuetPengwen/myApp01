@@ -42,7 +42,7 @@ export default class Index extends Component {
         fixed
         tabList={[
           {title: '首页', image: `${BASE_URL}/index.png`, selectedImage: `${BASE_URL}/index0.png`},
-          {title: '分类', image: `${BASE_URL}/sort.png`, selectedImage: `${BASE_URL}/sort0.png`},
+          {title: '点单', image: `${BASE_URL}/sort.png`, selectedImage: `${BASE_URL}/sort0.png`},
           {title: '购物车', image: `${BASE_URL}/cart.png`, selectedImage: `${BASE_URL}/cart0.png`},
           {title: '我的', image: `${BASE_URL}/me.png`, selectedImage: `${BASE_URL}/me0.png`}
         ]}
