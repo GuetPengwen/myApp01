@@ -2,12 +2,13 @@ import {Component} from "react";
 import {View, Swiper, SwiperItem, Image, Text} from '@tarojs/components'
 import Taro from "@tarojs/taro";
 import './index.scss'
-import {AtTag} from 'taro-ui'
+import TabBar from '../common/Index'
+import { AtTabs, AtTabsPane } from 'taro-ui'
 
 export default class Index extends Component {
 
 
-  componentWillMount() {
+  componentWillMount(){
     // console.log("参数值：",getCurrentInstance().router.params.id);
     //console.log("从主页传递过来的商品详情数据：",Taro.getCurrentInstance().preloadData);
     this.setState({
@@ -15,188 +16,87 @@ export default class Index extends Component {
     })
   }
 
-  constructor() {
+
+  constructor () {
     super(...arguments)
     this.state = {
       current: 0,
       product: {},
       num: 0,
-      showDot: false
+      showDot:false
     }
   }
-
-  onClick() {
-    console.log("选中");
+  handleClick (value) {
+    this.setState({
+      current: value
+    })
   }
-
-  addcart() {
+  addcart(){
     this.state.num++;
-    if (this.state.num != 0) {
+    if(this.state.num!=0){
       this.setState({
-        showDot: true
+        showDot:true
       })
     }
   }
+  showCart(){
+    console.log("查看购物车");
+    Taro.reLaunch({
+      url: '/pages/cart/index'})
 
-
+  }
   render() {
+    const tabList = [{ title: '商品详情' }, { title: '产品参数' }]
     const tempProduct = this.state.product;
 
     return (
-      <View className='product-detail'>
-        <View className='head'>
-          <image src='http://g1.juntaitec.cn/images/101.jpg'></image>
+      <View className='product-detial'>
+        <Swiper
+          className='swiper'
+          indicatorColor='#999'
+          indicatorActiveColor='#333'
+          vertical={false}
+          circular
+          indicatorDots
+          autoplay
+        >
+          <SwiperItem className='swiper-item'>
+            <image src={tempProduct.imageOne}></image>
+          </SwiperItem>
+          <SwiperItem className='swiper-item'>
+            <image src={tempProduct.imageTwo}></image>
+          </SwiperItem>
+          <SwiperItem className='swiper-item'>
+            <image src={tempProduct.imageThree}></image>
+          </SwiperItem>
+        </Swiper>
+        {/*商品标题价格*/}
+        <View className='box-demo'>
+          <Text className='title'>{tempProduct.title}{tempProduct.secondtitle}</Text>
+          <Text className='price'>￥{tempProduct.price}</Text>
         </View>
-
-        <View className='secondName'>
-          <Text className='text-one'>暴打西瓜波波</Text>
-          <Text className='text-two'>【巨清爽】无仔西瓜+有机绿茶，可冰沙可水果茶</Text>
-        </View>
-
-        <View className='line'></View>
-
-        <View className='choice'>
-
-          <View className='temperature'>
-            <Text>温度</Text>
-            <View className='tem-button'>
-              <AtTag
-                name='tag-1'
-                type='primary'
-                circle
-                onClick={this.onClick.bind(this)}
-              >
-                沙冰
-              </AtTag>
-              <AtTag
-                name='tag-1'
-                type='primary'
-                circle
-                onClick={this.onClick.bind(this)}
-              >
-                常规冰
-              </AtTag>
-              <AtTag
-                name='tag-2'
-                type='primary'
-                circle
-                onClick={this.onClick.bind(this)}
-              >
-                水果茶
-              </AtTag>
-            </View>
-          </View>
-
-          <View className='sweetness'>
-            <Text>甜度</Text>
-            <View className='sweet-button'>
-              <AtTag
-                name='tag-1'
-                type='primary'
-                circle
-                onClick={this.onClick.bind(this)}
-              >
-                常规糖
-              </AtTag>
-              <AtTag
-                name='tag-1'
-                type='primary'
-                circle
-                onClick={this.onClick.bind(this)}
-              >
-                7分糖
-              </AtTag>
-              <AtTag
-                name='tag-1'
-                type='primary'
-                circle
-                onClick={this.onClick.bind(this)}
-              >
-                五分糖
-              </AtTag>
-            </View>
-          </View>
-          <View className='material'>
-            <Text>加料</Text>
-            <View className='material-button'>
-              <AtTag
-                name='tag-1'
-                type='primary'
-                circle
-                onClick={this.onClick.bind(this)}
-              >
-                椰果
-              </AtTag>
-              <AtTag
-                name='tag-1'
-                type='primary'
-                circle
-                onClick={this.onClick.bind(this)}
-              >
-                寒天
-              </AtTag>
-              <AtTag
-                name='tag-1'
-                type='primary'
-                circle
-                onClick={this.onClick.bind(this)}
-              >
-                芋圆
-              </AtTag>
-            </View>
-          </View>
-        </View>
-
-        <View className='line'></View>
-
-        <View className='detail'>
-          <Text className='text-one'>商品详情</Text>
-          <Text className='text-three'>暂无详情</Text>
-        </View>
-
-        <View className='grey-block'></View>
-
-
-        {/*// <!--底部加入购物车-->*/}
+        {/* <!--商品详情展示-->*/}
+        <AtTabs current={this.state.current} tabList={tabList} onClick={this.handleClick.bind(this)}>
+          <AtTabsPane current={this.state.current} index={0} >
+            <Image mode='widthFix' src={tempProduct.productDetail}></Image>
+          </AtTabsPane>
+          <AtTabsPane current={this.state.current} index={1}>
+            <Image mode='widthFix' src={tempProduct.productParameter}></Image>
+          </AtTabsPane>
+        </AtTabs>
+         {/*// <!--底部加入购物车-->*/}
         <View className='bottom'>
-          <View className='up'>
-            <View className='up-left'>
-              <View className='price'>
-                <View className='price-left'>￥11.00</View>
-                <View className='vip'>
-                  <View className='vip-left'>vip</View>
-                  <View className='vip-right'>￥10.45</View>
-                </View>
-              </View>
-              <View className='in-text'>常规冰+常规糖</View>
-            </View>
+          <View className='left'>
+            <Image src='http://43.139.94.243/images/jindian.png' style='height:80rpx;width:90rpx'></Image>
+            <Image src='http://43.139.94.243/images/cart.png' style="height:90rpx;width:90rpx" onClick={this.showCart.bind(this)}></Image>
+            {this.state.showDot && <Text className='carts-icon-num'>{this.state.num}</Text>}
 
-            <View className='up-right'>
-              <View className='minus-circle'>
-                <View className='minus'></View>
-              </View>
-              <View className='num'>0</View>
-              <View className='add-circle'>
-                <View className='add-horizontal'></View>
-                <View className='add-vertical'></View>
-              </View>
-            </View>
           </View>
-
-          <View className='down'>
-            <View className='left'>
-              <View className='at-icon at-icon-external-link'>
-                <View className='share'>分享</View>
-              </View>
-              <View className='vertical-line'></View>
-              <View className='at-icon at-icon-shopping-cart'>
-                <View className='shoppingCart'>购物车</View>
-              </View>
-            </View>
-
-            <View className='right'>
-              <View className='button' onClick={this.addcart.bind(this)}>加入购物车</View>
-            </View>
+          <View className='right'>
+            <Text className='textone' onClick={this.addcart.bind(this)}>加入购物车</Text>
+          </View>
+          <View className='right'>
+            <Text className='texttwo'>联系客服</Text>
           </View>
         </View>
 
