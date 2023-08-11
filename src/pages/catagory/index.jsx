@@ -12,8 +12,9 @@ export default class Index extends Component{
   componentDidMount() {
     let _this=this;
     Taro.request({
-      //  url:'https://676f575b25.imdo.co/productList',
-      url: 'https://www.juntaitec.cn/api/productList', //仅为示例，并非真实的接口地址
+      //  url:'http://g1.juntaitec.cn/productList',
+      url:'https://676f575b25.imdo.co/productList',
+     // url: 'https://www.juntaitec.cn/api/productList', //仅为示例，并非真实的接口地址
       header: {
         'content-type': 'application/json' // 默认值
       },
@@ -62,28 +63,7 @@ export default class Index extends Component{
         {id: 7, title: "茶与芝士"},
         {id: 8, title: "加料"},
       ],
-      secondCategoryArr: [
-        {pId: 1, id: 111, title: "水果鲜茶1",img: 'https://img12.360buyimg.com/jdphoto/s72x72_jfs/t6160/14/2008729947/2754/7d512a86/595c3aeeNa89ddf71.png'},
-        {pId: 1, id: 112, title: "水果鲜茶2",img: 'https://img20.360buyimg.com/jdphoto/s72x72_jfs/t15151/308/1012305375/2300/536ee6ef/5a411466N040a074b.png'},
-        {pId: 1, id: 113, title: "水果鲜茶3",img: 'https://img10.360buyimg.com/jdphoto/s72x72_jfs/t5872/209/5240187906/2872/8fa98cd/595c3b2aN4155b931.png'},
-        {pId: 1, id: 115, title: "水果鲜茶4",img: 'https://img10.360buyimg.com/jdphoto/s72x72_jfs/t5872/209/5240187906/2872/8fa98cd/595c3b2aN4155b931.png'},
-        {pId: 1, id: 116, title: "水果鲜茶5",img: 'https://img10.360buyimg.com/jdphoto/s72x72_jfs/t5872/209/5240187906/2872/8fa98cd/595c3b2aN4155b931.png'},
-        {pId: 2, id: 211, title: "茶香柠柠1",img: 'https://img12.360buyimg.com/jdphoto/s72x72_jfs/t10660/330/203667368/1672/801735d7/59c85643N31e68303.png'},
-        {pId: 2, id: 212, title: "茶香柠柠2",img: 'https://img14.360buyimg.com/jdphoto/s72x72_jfs/t17251/336/1311038817/3177/72595a07/5ac44618Na1db7b09.png'},
-        {pId: 2, id: 213, title: "茶香柠柠3",img: 'https://img30.360buyimg.com/jdphoto/s72x72_jfs/t5770/97/5184449507/2423/294d5f95/595c3b4dNbc6bc95d.png'},
-        {pId: 3, id: 311, title: "MINI相机1",img: 'https://img12.360buyimg.com/jdphoto/s72x72_jfs/t6160/14/2008729947/2754/7d512a86/595c3aeeNa89ddf71.png'},
-        {pId: 3, id: 312, title: "MINI相机2",img: 'https://img20.360buyimg.com/jdphoto/s72x72_jfs/t15151/308/1012305375/2300/536ee6ef/5a411466N040a074b.png'},
-        {pId: 3, id: 313, title: "MINI相机3",img: 'https://img10.360buyimg.com/jdphoto/s72x72_jfs/t5872/209/5240187906/2872/8fa98cd/595c3b2aN4155b931.png'},
-        {pId: 4, id: 411, title: "电脑硬盘1",img: 'https://img12.360buyimg.com/jdphoto/s72x72_jfs/t10660/330/203667368/1672/801735d7/59c85643N31e68303.png'},
-        {pId: 4, id: 412, title: "电脑硬盘2",img: 'https://img14.360buyimg.com/jdphoto/s72x72_jfs/t17251/336/1311038817/3177/72595a07/5ac44618Na1db7b09.png'},
-        {pId: 4, id: 413, title: "电脑硬盘3",img: 'https://img30.360buyimg.com/jdphoto/s72x72_jfs/t5770/97/5184449507/2423/294d5f95/595c3b4dNbc6bc95d.png'},
-        {pId: 5, id: 511, title: "鼠标键盘1",img: 'https://img12.360buyimg.com/jdphoto/s72x72_jfs/t6160/14/2008729947/2754/7d512a86/595c3aeeNa89ddf71.png'},
-        {pId: 5, id: 512, title: "鼠标键盘2",img: 'https://img20.360buyimg.com/jdphoto/s72x72_jfs/t15151/308/1012305375/2300/536ee6ef/5a411466N040a074b.png'},
-        {pId: 5, id: 513, title: "鼠标键盘3",img: 'https://img10.360buyimg.com/jdphoto/s72x72_jfs/t5872/209/5240187906/2872/8fa98cd/595c3b2aN4155b931.png'},
-        {pId: 6, id: 611, title: "平板电脑1",img: 'https://img12.360buyimg.com/jdphoto/s72x72_jfs/t6160/14/2008729947/2754/7d512a86/595c3aeeNa89ddf71.png'},
-        {pId: 6, id: 612, title: "平板电脑2",img: 'https://img20.360buyimg.com/jdphoto/s72x72_jfs/t15151/308/1012305375/2300/536ee6ef/5a411466N040a074b.png'},
-        {pId: 6, id: 613, title: "平板电脑3",img: 'https://img10.360buyimg.com/jdphoto/s72x72_jfs/t5872/209/5240187906/2872/8fa98cd/595c3b2aN4155b931.png'},
-      ],
+      secondCategoryArr: [],
       active:false
     }
   }
@@ -106,6 +86,10 @@ export default class Index extends Component{
             <AtTag  type='primary' circle active='true'>自取</AtTag>
             <AtTag  type='primary' circle>外卖</AtTag>
           </View>
+          <View className='md'>
+            <Text className='md-word'>门店信息</Text>
+            <AtIcon value='chevron-down' size='20' color='#808080'></AtIcon>
+          </View>
         </View>
 
         <Swiper
@@ -118,13 +102,13 @@ export default class Index extends Component{
           autoplay
         >
           <SwiperItem className='swiper-item'>
-            <image src={require('./11.jpg')}></image>
+            <image src='http://g1.juntaitec.cn/images/11.jpg'></image>
           </SwiperItem>
           <SwiperItem className='swiper-item'>
-            <image src={require('./22.png')}></image>
+            <image src='http://g1.juntaitec.cn/images/22.jpg'></image>
           </SwiperItem>
           <SwiperItem className='swiper-item'>
-            <image src={require('./33.png')}></image>
+            <image src='http://g1.juntaitec.cn/images/33.jpg'></image>
           </SwiperItem>
         </Swiper>
         <AtTabs
@@ -140,18 +124,18 @@ export default class Index extends Component{
               return(
                 <AtTabsPane tabDirection='vertical' current={this.state.current} index={0} className='tabsPane'>
                   {
-                    this.state.secondCategoryArr.map((secondLeveMenu)=>{
+                    this.state.productList.map((secondLeveMenu)=>{
                       //  console.log("ccccccc")
                       //判断二级菜单的pId是否等于一级菜单的Id
-                      if(secondLeveMenu.pId==firstLeveMenu.id){
+                      if(secondLeveMenu.pid==firstLeveMenu.id){
                         return(
                           <View className='paneContent' onClick={this.showProductDetail.bind(this,secondLeveMenu.id)}>
-                            <Image className='left-image' style='height: 80px;width: 80px' src={secondLeveMenu.img}></Image>
+                            <Image className='left-image' style='height: 80px;width: 80px' src={secondLeveMenu.image}></Image>
 
-                            <Text className='cart-title'>{secondLeveMenu.title}</Text>
+                            <Text className='cart-title'>{secondLeveMenu.name}</Text>
                             <Text>{this.state.br}</Text>
-                            <Text className='cart-secondname'>西瓜/绿茶/脆波波</Text>
-                            <Text className='cart-price'>￥ 13</Text>
+                            <Text className='cart-secondname'>{secondLeveMenu.secondname}</Text>
+                            <Text className='cart-price'>￥ {secondLeveMenu.price}</Text>
                           </View>
                         )
                       }

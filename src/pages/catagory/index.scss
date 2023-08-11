@@ -1,4 +1,5 @@
 
+
 .title{
   position: relative;
 }
@@ -7,61 +8,63 @@
   font-weight: bold;
 }
 .zq-wm{
-  //position: relative;
-  //right: 0;
   float: right;
+  color: black;
 }
+.md{
+  text-align: right;
+  color: black;
+}
+.md-word{
 
+  font-size: 25px;
+}
 .swiper{
+
   width: 100%;
   height: 350px;
 }
 .swiper-item image{
+
   width: 100%;
 }
 
 
 .tabsPane{
+
   display: flex;
   align-content: flex-start;
   flex-wrap: wrap;
 }
 .paneContent{
   font-size: 30px;
-  // text-align: center;
-  //  border-bottom: 1px solid #DDDDDD;
-  //  border-right:  1px solid #DDDDDD;
-  //margin-right: 50px;
-  // margin-bottom: 20px;
+  margin-right: 70px;
+  margin-bottom: 30px;
 }
 /*商品图片左浮动*/
 .left-image {
   float: left;
 }
-/*购物车商品图片样式*/
+/*商品图片样式*/
 .addcart-image {
   width: 170px;
   height: 210px;
   float: left;
   padding: 10px;
 }
-/*购物车商品信息左浮动*/
-.left-detail {
-  float: left;
-  margin-top: 20px;
-  line-height: 60px;
-}
-/*购物车商品标题样式*/
+
+/*商品标题样式*/
 .cart-title {
   margin-top: 24px;
   font-size: 32px;
 }
-/*购物车商品二级标题样式*/
+/*商品二级标题样式*/
 .cart-secondname{
+  margin-top: 24px;
   font-size: 20px;
   color: #aaaaaa;
 }
-/* 购物车商品价格样式*/
+/* 商品价格样式*/
 .cart-price {
   display: flex;
   color: #000000;
