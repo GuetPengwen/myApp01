@@ -1,85 +1,278 @@
-@import "~taro-ui/dist/style/components/tabs.scss";
-
+.product-detail{
+  height:1660px;
+}
 /*轮播图样式*/
-.swiper {
+.head {
   width: 100%;
-  height: 720px;
-}
-/*轮播图内部图片样式*/
-.swiper-item image {
-  display: block;
-  margin: 60px auto;
-  width: 560px;
-  height: 530px;
+  height: 660px;
+  background: rgb(244,246,248);
 }
 
+.head image{
+  height: 640px;
+  width: 100%;
+}
 
-/*商品展示外部样式*/
-.box-demo {
+.secondName{
+  height: 140px;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* 垂直排列 */
+  align-items: flex-start; /* 左对齐 */
+}
+.text-one {
+  font-weight: 600; /* 加粗 */
+  padding-left: 30px;
+  margin-top: 15px;
+}
+
+.text-two {
+  font-size: 24px; /* 调整字体大小 */
+  color: #999; /* 调整颜色为浅灰色 */
+  padding-left: 23px;
+  margin-top: 25px;
+}
+
+.text-three{
+  font-size: 24px; /* 调整字体大小 */
+  color: #999; /* 调整颜色为浅灰色 */
+  padding-left: 30px;
+  margin-top: 25px;
+}
+
+.line{
   width: 100%;
-  height: 100px;
+  height: 20px;
+  background: rgb(244,246,248);
 }
-/*商品标题样式*/
-.title {
-  font-size: 34px;
+
+.choice{
+  width: 100%;
+  height: 400px;
 }
-/*商品价格样式*/
-.price {
-  color: #f00;
-  font-size: 32px;
-  padding-top: 20px;
-  padding-left: 15px;
+.temperature{
+  align-items: center;
+  display: flex;
+  margin-top:30px;
 }
-/*底部样式*/
+.temperature Text{
+  padding-left: 20px;
+  color:rgb(91,91,91);
+  font-size: 27px;
+}
+.tem-button{
+  margin-left: 70px;
+  width: 60%;
+  justify-content: space-between;
+  display: flex;
+}
+.sweetness{
+  align-items: center;
+  display: flex;
+  margin-top:30px;
+}
+.sweetness Text{
+  padding-left: 20px;
+  color:rgb(91,91,91);
+  font-size: 27px;
+}
+.sweet-button{
+  margin-left: 70px;
+  width: 60%;
+  justify-content: space-between;
+  display: flex;
+}
+.material{
+  align-items: center;
+  display: flex;
+  margin-top:30px;
+}
+.material Text{
+  padding-left: 20px;
+  color:rgb(91,91,91);
+  font-size: 27px;
+}
+.material-button{
+  margin-left: 70px;
+  width: 60%;
+  justify-content: space-between;
+  display: flex;
+}
+
+.detail{
+  height: 140px;
+  display: flex;
+  flex-direction: column; /* 垂直排列 */
+  align-items: flex-start; /* 左对齐 */
+}
+
+.grey-block{
+  width: 100%;
+  height: 120px;
+  background: rgb(244,246,248);
+}
+
 .bottom {
   width: 100%;
-  height: 90px;
+  height: 190px;
   position: fixed;
-  bottom: 0px;
-  background: #fff;
+  bottom: 0;
+  background: rgba(255, 255, 255, 1); /* 设置背景颜色不透明 */
+  opacity: 1; /* 设置元素不透明度为 1 */
 }
-/*底部左边样式*/
+
+.up{
+  height: 110px;
+  align-items: center; /* 垂直居中对齐 */
+  display: flex; /* 使用 Flex 布局 */
+}
+
+.up-left{
+  width: 42%;
+}
+
+.price{
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  height: 50px;
+}
+.price-left{
+  width: 50%;
+  font-size: 40px; /* 字体大小 */
+  color: rgb(238,94,103);
+  padding-left: 20px;
+  font-weight: 600; /* 字体加粗 */
+}
+.vip{
+  background:rgb(235,212,167);
+  color: rgb(235,212,167);
+  border-radius: 10%;
+  width: 48%;
+  height: 45px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.vip-left{
+  font-size: 30px;
+  width: 38%;
+  height: 100%;
+  background: rgb(74,75,75);
+  color: rgb(235,212,167);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.vip-right{
+  font-size: 24px;
+  color: rgb(74,75,75);
+}
+
+
+.in-text{
+  font-size: 25px;
+  color: #999;
+  padding-left: 20px;
+}
+
+.up-right{
+  width:35%;
+  height:90px;
+  position: fixed;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.minus-circle {
+  width: 60px;
+  height: 60px;
+  border: 5px solid #999;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.minus{
+  width: 60%;
+  height: 4px;
+  background: #999;
+}
+
+.add-circle {
+  width: 64px;
+  height: 64px;
+  background-color: rgb(243,104,53);
+  border-radius: 50%; /* 将按钮变成圆形 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.add-horizontal,
+.add-vertical {
+  width: 45%;
+  background: white;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+.add-horizontal {
+  height: 6px;
+  top: 50%;
+  left: 50%;
+}
+.add-vertical {
+  height: 4px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.down{
+  height: 80px;
+  display: flex;
+
+}
+
 .left {
-  width: 25%;
-  margin-left: 20px;
-  float: left;
-}
-/*底部右边样式*/
-.right {
   width: 35%;
   height: 100%;
-  float: right;
+  align-items: center; /* 垂直居中对齐 */
+  display: flex; /* 使用 Flex 布局 */
+  justify-content: space-evenly; /* 均匀分布子元素 */
+}
+
+.at-icon {
+  font-size: 60px; /* 调整图标的大小 */
+  color: rgb(70,70,70);
+  margin: 0; /* 移除默认的外边距 */
+}
+.share{
+  text-align: center; /* 居中文本 */
+  font-size: 22px; /* 字体大小 */
+  color: rgb(70,70,70);
+}
+.vertical-line{
+  width: 4px;
+  height: 80%; /* 设置你想要的高度 */
+  background-color: rgb(70,70,70); /* 设置线的颜色 */
+}
+.shoppingCart{
+  text-align: center; /* 居中文本 */
+  font-size: 22px; /* 字体大小 */
+  color: rgb(70,70,70);
+}
+
+/*底部右边样式*/
+.right {
+  height: 100%;
+  width: 65%;
 }
 /*底部文字样式*/
-.textone {
-  display: block;
-  color: white;
-  line-height: 100px;
-  text-align: center;
-  font-size: 26px;
-  background: #f00;
-}
-.texttwo {
-  display: block;
-  color: white;
-  line-height: 100px;
-  text-align: center;
-  font-size: 26px;
-  background: green;
-}
-/*加入购物车图标样式*/
-.carts-icon-num {
-  position: absolute;
-  top: 5px;
-  left: 160px;
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  border-radius: 50%;
-  background: #f00;
-  color: #fff;
-  font-size: 24px;
-  text-align: center;
+.button{
+  width: 445px;
 }
